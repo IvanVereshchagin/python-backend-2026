@@ -38,3 +38,34 @@ python hw3/generate_traffic.py
 
 Подождать 20–30 секунд для нескольких циклов сбора метрик. 
 
+## Графики Grafana
+
+### 1. Shop API — Requests
+
+<img width="1280" height="433" alt="image" src="https://github.com/user-attachments/assets/a0e6d22e-c79f-4100-862a-22f7b461d1af" />
+
+Дашборд отображает статистику HTTP-запросов к сервису интернет-магазина.
+
+| Метрика | Описание |
+|---|---|
+| Requests / second by endpoint | Количество запросов в секунду к эндпоинтам `/cart`, `/item`, `/item/{id}` |
+| Requests / second by status | Количество запросов в секунду по группам HTTP-статусов (2xx, 4xx) |
+| Service up (1 = yes) | Доступность сервиса для Prometheus: 1 — доступен, 0 — недоступен |
+| Total HTTP requests | Общее количество HTTP-запросов, зарегистрированных метриками |
+
+
+### 2. Shop API — Latency
+
+<img width="1280" height="353" alt="image" src="https://github.com/user-attachments/assets/49132a64-bc9f-4f0d-b435-4974a0df69b4" />
+
+Дашборд предназначен для мониторинга производительности API и анализа времени обработки HTTP-запросов.
+
+| Метрика | Описание |
+|---|---|
+| p95 response time by endpoint | 95-й перцентиль времени ответа для каждого эндпоинта |
+| Average response time by endpoint | Среднее время обработки запросов по каждому эндпоинту |
+| Overall p95 response time | Общий 95-й перцентиль времени ответа сервиса |
+| 4xx requests / second | Количество запросов с клиентскими ошибками (4xx) в секунду |
+
+
+
